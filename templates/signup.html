@@ -1,0 +1,69 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+   <section>
+        <div class="box">
+
+            <div class="form">
+                <img src="{% static '/images/profile.jpg' %}" class="user" alt="">
+                <h2> Signup</h2>
+                <form class="" action="index.html" method="post" enctype="multipart/form-data">
+            
+                    <div class="inputBx">
+                        <input type="text" name="firstname" placeholder="firstname" id="firstname" oninput="validation()" required autofocus>
+                        <img src="images/user.png" alt="">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="lastname" placeholder="lastname" id="lastname" oninput="validation()" required autofocus>
+                        <img src="images/user.png" alt="">
+                    </div>
+                  
+
+                    <div class="inputBx">
+                        <input type="text" name="Email" placeholder="Email" id="Email" oninput="validation()" required autofocus>
+                        <img src="images/user.png" alt="">
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" name="passward" id="password" placeholder="Passward" oninput="validation()" required>
+                        <img src="images/lock.png" alt="">
+                    </div>
+                <label for='sex' ><b>Sex : </b></label>
+            <input type='radio' name='sex' value='male' required>
+            <label ><b>Male</b></label>
+            <input type='radio' name='sex' value='female' required>
+            <label ><b>Female</b></label><br>
+               <br>
+               
+                    <div class="inputBx" > 
+                        <input  type="submit" name="submit" value="Signup" id="submit" disabled>
+                    </div>
+                </form>
+                <div><span style="float: left;"><a href="#">Forgot Passward </a></span>
+                <span style="float:right;"><a href="{% url 'login' %}">New user?Sign-in</a></span></div>
+
+            </div>
+
+        </div>
+    </section>
+    <script type="text/javascript">
+      function validation() {
+        let username = document.getElementById("username").value;
+        let pass = document.getElementById("password").value;
+        if (username != "" && pass != "") {
+            document.getElementById("submit").disabled = false;
+        } else {
+            document.getElementById("submit").disabled = true;
+        }
+    }
+    </script>
+   </body>
+</html>
