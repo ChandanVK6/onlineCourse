@@ -1,0 +1,300 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> 
+   <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}" > -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/custom-style.css' %}" > 
+    
+    <title>Welcome !</title>
+  </head>
+
+
+
+  <body>
+    
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mb-3" href="{% url 'index' %}">
+          <img src="{% static  '/images/data-center.png' %}" width = '50px' class ="mr-3" >
+          Freelearn
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+         aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+
+          <ul class="navbar-nav mr-auto container-fluid">
+           
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-list-ul"></i> Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+            <li class="nav-item col-8">
+                   <form class="form-inline my-2 my-lg-0 inbutton">
+                            <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
+                            style="border-radius: 5px 0px 0px 5px" 
+                            type="search" placeholder="Search for Courses" aria-label="Search">
+                             
+                            <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
+                          style="border-radius: 0px 5px 5px 0px;"
+                            type="submit"><i class="fas fa-search text-danger "></i></button>
+                        </form>
+                    </li>
+
+          </ul>
+
+           
+                
+                <a class="nav-link btn btn-outline-light" href="{% url 'inst_login' %}">Login</a>
+                <a class="nav-link btn btn-danger mx-2" href="{% url 'inst_signup' %}">Signup</a>
+            
+
+          
+        </div>
+      </nav>
+            
+     
+      <div class="jumbotron big-banner-inst mb-0 jumbotron-fluid" style="height: 500px; padding-top: 150px;">
+         
+
+          <div class="container">
+                <div class="row align-items-center">
+                  <div class="col">
+                    
+                    <div class="col-md-4 text-dark">
+                        <h1 class="display-5">Learning that gets you</h1>
+                        <p class="lead">Skills for your present(and your future).Get started with us.</p>
+                  </div>
+
+                  <div class="col-md-6">
+                         <button type="button" class="ud-btn ud-btn-large ud-btn-primary ud-heading-md hero-header--cta--3lLy8" data-purpose="bai-cta"><span>Get started</span></button>
+                    </div>
+
+
+                  </div>
+                 
+                </div>
+              </div>
+
+       </div>
+     
+
+
+      <div class ="ud-container teach-page__container">
+      <h2 class="ud-heading-serif-xl teach-page__heading teach-page__margin-center">So many reasons to start</h2>   
+       <div class="why-udemy--value-props--31Fzn">
+         <div class="value-props--props--2NqXA value-props--props--large--3R8gN">
+           <div class="value-props--prop--cuJrn">
+             <div class="value-props--graphic--MCrlz">
+               <img alt="" width="100" height="100" src="https://s.udemycdn.com/teaching/value-prop-teach-v3.jpg" srcset="https://s.udemycdn.com/teaching/value-prop-teach-v3.jpg 1x, https://s.udemycdn.com/teaching/value-prop-teach-2x-v3.jpg 2x">
+             </div>
+             <div class="ud-heading-lg value-props--body--3h6Gu">Teach your way</div>
+             <div class="value-props--body--3h6Gu value-props--text--3pGkq">Publish the course you want, in the way you want, and always have control of your own content.</div>
+           </div>
+           <div class="value-props--prop--cuJrn">
+            <div class="value-props--graphic--MCrlz">
+              <img alt="" width="100" height="100" src="https://s.udemycdn.com/teaching/value-prop-inspire-v3.jpg" srcset="https://s.udemycdn.com/teaching/value-prop-inspire-v3.jpg 1x, https://s.udemycdn.com/teaching/value-prop-inspire-2x-v3.jpg 2x"></div>
+              <div class="ud-heading-lg value-props--body--3h6Gu">Inspire learners</div>
+              <div class="value-props--body--3h6Gu value-props--text--3pGkq">Teach what you know and help learners explore their interests, gain new skills, and advance their careers.</div>
+            </div>
+            <div class="value-props--prop--cuJrn">
+              <div class="value-props--graphic--MCrlz">
+                <img alt="" width="100" height="100" src="https://s.udemycdn.com/teaching/value-prop-get-rewarded-v3.jpg" srcset="https://s.udemycdn.com/teaching/value-prop-get-rewarded-v3.jpg 1x, https://s.udemycdn.com/teaching/value-prop-get-rewarded-2x-v3.jpg 2x"></div>
+                <div class="ud-heading-lg value-props--body--3h6Gu">Get rewarded</div>
+                <div class="value-props--body--3h6Gu value-props--text--3pGkq">Expand your professional network, build your expertise, and earn money on each paid enrollment.</div>
+              </div>
+         </div>
+       </div> 
+      </div>             
+
+
+
+      <div class="by-the-numbers--container--2mjpv">
+        <div class="ud-container by-the-numbers--numbers--2lMU3">
+          <div class="by-the-numbers--number--5fy3w">
+            <div class="ud-heading-xxxl">57M</div>
+            <p>Students</p>
+          </div>
+            <div class="by-the-numbers--number--5fy3w">
+              <div class="ud-heading-xxxl">75+</div>
+              <p>Languages</p>
+            </div>
+              <div class="by-the-numbers--number--5fy3w">
+                <div class="ud-heading-xxxl">773M</div>
+                <p>Enrollments</p>
+              </div>
+              <div class="by-the-numbers--number--5fy3w">
+                <div class="ud-heading-xxxl">180+</div>
+                <p>Countries</p>
+              </div>
+              <div class="by-the-numbers--number--5fy3w">
+                <div class="ud-heading-xxxl">13,400+</div>
+                <p>Enterprise customers</p>
+              </div>
+            </div>
+          </div>
+
+
+      
+
+
+
+       
+<div class="teach-page__pale-container">
+    <div class="ud-container teach-page__container">
+        <h2 class="ud-heading-serif-xxl teach-page__heading teach-page__margin-center">Become an instructor today</h2>
+        <p class="ud-text-xl simple-cta--subtitle--VWykw">Join one of the world’s largest online learning marketplaces.
+        </p><button type="button" class="ud-btn ud-btn-large ud-btn-primary ud-heading-md simple-cta--cta--1W4wB"
+            data-purpose="bai-cta-footer"><span>Get started</span></button>
+        <div></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+      <br>
+      <br>
+      <br>
+
+
+<div class="row pt-5 px-3 border-top mt-5  " style="font-size: 13px;">
+  <div class="col">
+
+    
+    <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link text-info" href="#"><b>Udemy for business</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" href="#"><b>Become and Instructor</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-info" href="#">Mobile Apps</a>
+        </li>
+      </ul>
+
+
+  </div>
+  <div class="col">
+
+      <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">Blog</a>
+          </li>
+        </ul>
+
+  </div>
+  <div class="col">
+
+      <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">Topics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-info" href="#">Affiliate</a>
+          </li>
+        </ul>
+
+  </div>
+  <div class="col">
+<form>
+    <div class="form-group col-6 float-right">
+        <select  class="form-control" id="exampleFormControlSelect2">
+          <option><i class="fas fa-globe"></i> English</option>
+          <option>Japanese</option>
+          <option>Yoruba</option>
+          <option>Igbo</option>
+          <option>Hausa</option>
+        </select>
+      </div>
+</form>
+
+  </div>
+</div>
+<nav class="nav mt-5 ml-3" style="font-size: 12px;">
+    <span class="nav-link active text-muted font-weight-bold" >Local Home Pages</span>
+    <span class="nav-link" >English</span>
+    <a class="nav-link text-info" href="#">Deutsch</a>
+    <a class="nav-link text-info" href="#">Français</a>
+    <a class="nav-link text-info" href="#">Português</a>
+    <a class="nav-link text-info" href="#">日本語</a>
+  </nav>
+<hr/>
+
+<div class="row" style="font-size: 12px;">
+      <div class="col pl-5">
+          <img src="{% static 'images/data-center.png' %}" width="50px" class="mr-5" > <span>Copyright © 2023 Freelearn, Inc.</span>
+      </div>
+      <div class="col">
+          <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active text-info" href="#">Terms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="#">Privacy and Cookie Police</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="#">Intellectual Property</a>
+              </li>
+            </ul>
+
+      </div>
+</div>
+
+
+ 
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+  
+  </script>
+  
+</body>
+
+
+
+</html>

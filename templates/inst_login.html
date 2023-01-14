@@ -1,4 +1,4 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,16 +15,15 @@
 
             <div class="form">
                 <img src="{% static '/images/profile.jpg' %}" class="user" alt="">
-                <h2>Login in User</h2>
-                <form class="" action="{% url 'login' %}" method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
+                <h2>Login in as Instructor</h2>
+                <form class="" action="index.html" method="post" enctype="multipart/form-data">
             
                     <div class="inputBx">
-                        <input type="text" name="Email" placeholder="Email" id="Email" oninput="validation()" required autofocus>
+                        <input type="text" name="username" placeholder="Username" id="username" oninput="validation()" required autofocus>
                         <img src="images/user.png" alt="">
                     </div>
                     <div class="inputBx">
-                        <input type="password" name="password" id="password" placeholder="Password" oninput="validation()" required>
+                        <input type="password" name="passward" id="password" placeholder="Passward" oninput="validation()" required>
                         <img src="images/lock.png" alt="">
                     </div>
                     <label class="remeber"><input type="checkbox"> Remember Me</label>
@@ -33,7 +32,7 @@
                     </div>
                 </form>
                 <div><span style="float: left;"><a href="#">Forgot Passward </a></span>
-                <span style="float:right;"><a href="{% url 'signup' %}">New user?Sign-up</a></span></div>
+                <span style="float:right;"><a href="{% url 'inst_signup' %}">New user?Sign-up</a></span></div>
 
             </div>
 
@@ -41,9 +40,9 @@
     </section>
     <script type="text/javascript">
     	function validation() {
-		    let email = document.getElementById("Email").value;
+		    let username = document.getElementById("username").value;
 		    let pass = document.getElementById("password").value;
-		    if (email != "" && pass != "") {
+		    if (username != "" && pass != "") {
 		        document.getElementById("submit").disabled = false;
 		    } else {
 		        document.getElementById("submit").disabled = true;

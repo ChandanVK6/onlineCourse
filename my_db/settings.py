@@ -77,8 +77,17 @@ WSGI_APPLICATION = 'my_db.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST':'127.0.0.1',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web_db',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD':'589616',
+        'OPTIONS':{
+        'autocommit':True,
+        'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
+
     }
 }
 
@@ -124,3 +133,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media/')
+MEDIA_URL= "/media/"

@@ -16,10 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from my_app import views
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',views.index, name ='index'),
+    path('',views.index, name ='index'),
     path('login/',views.login,name = 'login'),
     path('signup/',views.signup, name= 'signup'),
-]
+    path('instructor/',views.instructor, name= 'instructor'),
+    path('inst_signup/',views.instsignup, name= 'inst_signup'),
+    path('inst_login/',views.instlogin, name= 'inst_login'),
+    path('user_page/<int:name>/',views.userpage, name= 'userpage'),
+    path('mycourse/',views.mycourse, name= 'mycourse'),
+]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()

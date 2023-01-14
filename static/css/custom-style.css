@@ -1,9 +1,217 @@
 .big-banner{
     background-image: url('../images/background.jpg');
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .fresh-content{
     background: linear-gradient(-45deg,#ec5252,#6e1a52);
 }
 
+.big-banner-inst{
+    background-image: url('../images/instru_back.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.teach-page_margin-center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.teach-page__container {
+    padding: 4.8rem 2.4rem;
+    text-align: center;
+}
+
+.ud-container {
+    width: 100%;
+    max-width: 134rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+}
+.ud-heading-serif-xl {
+    font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.35;
+    letter-spacing: -.02rem;
+}
+
+@media (min-width: 43.81em)
+.teach-page__heading {
+    font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1.15;
+    letter-spacing: -.05rem;
+}
+
+@media (min-width: 43.81em)
+.why-udemy--value-props--31Fzn {
+    margin: 4.8rem auto 0;
+    max-width: none;
+}
+.value-props--props--2NqXA {
+    display: flex;
+    justify-content: space-between;
+}
+.value-props--props--large--3R8gN .value-props--prop--cuJrn {
+    flex-direction: column;
+    align-items: center;
+}
+
+.value-props--prop--cuJrn {
+    display: flex;
+}
+.value-props--props--large--3R8gN .value-props--graphic--MCrlz {
+    margin-bottom: 1.6rem;
+}
+.value-props--props--large--3R8gN .value-props--body--3h6Gu {
+    max-width: 34rem;
+    text-align: center;
+}
+.ud-heading-lg {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.9rem;
+}
+.value-props--text--3pGkq {
+    margin-top: 0.4rem;
+}
+.value-props--props--large--3R8gN>*+* {
+    margin: 0 0 0 6.4rem;
+}
+.ud-heading-lg {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.9rem;
+}
+@media (min-width: 43.81em)
+.teach-page__container {
+    padding: 8.8rem 2.4rem;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+img[Attributes Style] {
+    width: 100px;
+    aspect-ratio: auto 100 / 100;
+    height: 100px;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.ud-btn-primary:active, .ud-btn-primary:hover {
+    background-color: #000;
+}
+.ud-btn-primary:hover, .ud-btn-black-solid:hover, .ud-btn-white-outline:hover, .ud-btn-brand:hover, .ud-btn-primary:focus, .ud-btn-black-solid:focus, .ud-btn-white-outline:focus, .ud-btn-brand:focus {
+    color: #fff;
+}
+@media (min-width: 43.81em)
+.hero-header--title---4jCL, .hero-header--subtitle--athYy, .hero-header--cta--3lLy8 {
+    width: 32rem;
+}
+.hero-header--cta--3lLy8 {
+    margin-top: 0.2rem;
+    width: 75%;
+}
+.ud-btn-primary, .ud-btn-primary.ud-btn-disabled {
+    background-color: #1c1d1f;
+}
+.ud-btn-primary, .ud-btn-black-solid, .ud-btn-white-outline, .ud-btn-brand {
+    color: #fff;
+}
+.ud-btn-large {
+    height: 3.4rem;
+}
+.ud-btn {
+    position: relative;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    min-width: 8rem;
+    padding: 0 1.2rem;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+.ud-heading-md {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 61.31em)
+.by-the-numbers--container--2mjpv {
+    padding: 4.8rem 0;
+}
+.by-the-numbers--container--2mjpv {
+    background: #5624d0;
+    color: #fff;
+
+}
+.by-the-numbers--numbers--2lMU3 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+.by-the-numbers--number--5fy3w {
+    max-width: 27.8rem;
+    padding: 1.6rem 2.4rem;
+    text-align: center;
+}
+.ud-heading-xxxl {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 4rem;
+}
+
+.teach-page__pale-container {
+    background: #f7f9fa;
+}
+.teach-page__heading {
+    font-family: SuisseWorks,Georgia,Times,times new roman,serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1.15;
+    letter-spacing: -.05rem;
+}
+.simple-cta--subtitle--VWykw {
+    margin: 1.6rem auto 2.4rem;
+}
+.ud-text-xl {
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 2.4rem;
+}
+.simple-cta--cta--1W4wB {
+    min-width: 32rem;
+}
