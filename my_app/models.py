@@ -1,82 +1,103 @@
-from django.db import models
-
+from  embed_video.fields  import  EmbedVideoField
 # Create your models here.
+from django.db import models
+from django.db.models import Avg
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class User(models.Model):
     fname = models.CharField(max_length = 20)
-    lname = models.CharField(max_length = 20,null=True)
-    email = models.EmailField(max_length =50,null=True)
-    passwd = models.CharField(max_length = 16,null=True)
+    lname = models.CharField(max_length = 20)
+    email = models.EmailField(max_length =50)
+    passwd = models.CharField(max_length = 16)
     sex = models.CharField(max_length =10)
 
     def __str__(self):
-        return self.fname  
-        
+        return self.fname +' '+ self.lname
 
 class Instructor(models.Model):
     fname = models.CharField(max_length = 20)
-    lname = models.CharField(max_length = 20,null=True)
-    skills = models.TextField(max_length = 40)
-    email = models.EmailField(max_length =50,null=True)
-    passwd = models.CharField(max_length = 16,null=True)
+    lname = models.CharField(max_length = 20)
+    email = models.EmailField(max_length =50)
+    passwd = models.CharField(max_length = 16)
     sex = models.CharField(max_length =10)
-
+    image = models.ImageField(null = True,blank = True,upload_to = 'images/')
 
     def __str__(self):
-        return str(self.fname + self.lname)
+        return self.fname +' '+ self.lname
 
 class Category(models.Model):
-    name = models.CharField(max_length = 20)
-    description = models.TextField(max_length = 50)
-    instructor = models.ForeignKey(Instructor,on_delete = models.CASCADE,null=True)
+    category_id = models.BigAutoField(primary_key =True)
+    name = models.CharField(max_length = 50)
+   
 
     def __str__(self):
         return self.name
+  
+
 
 
 class Courses(models.Model):
-    name = models.CharField(max_length = 20)
+    courses_id = models.BigAutoField(primary_key = True)
+    name = models.CharField(max_length = 50)
     content = models.TextField(max_length = 50)
-    category = models.ForeignKey(Category,on_delete = models.CASCADE,null = True)
-    instructor = models.ForeignKey(Instructor,on_delete = models.CASCADE,null = True)
-    user = models.ManyToManyField(User)
-    image = models.ImageField(null = True,blank = True,upload_to = 'images/')
+    category_id = models.ForeignKey(Category,on_delete = models.CASCADE)
+    instructor = models.ForeignKey(Instructor,on_delete = models.CASCADE)
+    user = models.ManyToManyField(User,related_name ="user",through="Courses_User")
+    image = models.ImageField(upload_to = 'images/')
+    intro_Video = EmbedVideoField()
 
+   
     def __str__(self):
         return self.name
 
 class Videos(models.Model):
-    file = models.URLField()
-    course = models.ForeignKey(Courses,on_delete = models.CASCADE,null=True)
-
+    vid_name = models.CharField(max_length=50)
+    vid = EmbedVideoField()
+    course = models.ForeignKey(Courses,on_delete = models.CASCADE)
+    
     def __str__(self):
-        return self.file 
-
+        return self.vid_name
+   
 
 class Quiz(models.Model):
-    quiz_url = models.URLField(null=True)
-    course = models.ForeignKey(Courses,on_delete = models.CASCADE,null=True)
-
+    quiz_name = models.CharField(max_length=50)
+    quiz_url = models.URLField()
+    course= models.ForeignKey(Courses,on_delete = models.CASCADE)
+    
 
     def __str__(self):
-        return self.quiz_url
+        return self.quiz_name
+   
 
 
 class Pdfs(models.Model):
+    pdf_name = models.CharField(max_length=50)
+    file  = models.FileField(upload_to ='pdfs/')
+    course = models.ForeignKey(Courses,on_delete = models.CASCADE)
    
-    pdf_file  = models.FileField(upload_to ='pdfs/',null = True,verbose_name = '')
-    course = models.ForeignKey(Courses,on_delete = models.CASCADE,null=True)
 
     def __str__(self):
-        return str(self.pdf_file)
+        return self.pdf_name
 
 
-class rating(models.Model):
-   
-    rev_stars = models.IntegerField()
-    course = models.ForeignKey(Courses,on_delete=models.CASCADE,null=True)
-
+class Rating(models.Model):
+    courses_id = models.ForeignKey(Courses,on_delete=models.CASCADE)
+    score = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
 
     def __str__(self):
-        return str(self.rev_stars)
+        return str(self.pk)
 
+
+
+class Courses_User(models.Model):
+    courses_id = models.ForeignKey(Courses,on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User,on_delete=models.CASCADE)
+    enroll_date =  models.DateTimeField(auto_now_add=True) 
+
+    class Meta:
+        unique_together = ("user_id","courses_id")

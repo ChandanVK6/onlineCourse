@@ -11,6 +11,16 @@
    <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}" > -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/custom-style.css' %}" > 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    
     
     <title>Welcome !</title>
   </head>
@@ -42,11 +52,10 @@
                     <i class="fas fa-list-ul"></i> Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+                <a class="dropdown-item" href="#">Programming</a>
+                <a class="dropdown-item" href="#">web Development</a>
+                <a class="dropdown-item" href="#">Mobile Development</a>
+                <a class="dropdown-item" href="#"> Data Science</a>
             </li>
 
             <li class="nav-item col-8">
@@ -62,43 +71,221 @@
                     </li>
 
           </ul>
-                <a class="btn btn-dark mr-3" href="{% url 'login' %}">LogOut</a>
-                
-           
-                <a class="btn btn-dark mr-3" href="{% url 'instructor' %}">My Course</a>
+
+
+                <p style="color:#ffffff;" class ="mr-5 mt-3  ">{{usr.fname}}&nbsp;{{usr.lname}}</p>
+                <a class="btn btn-dark mr-3" href="{% url 'signout' %}">LogOut</a>
                 
 
-                
-          
+           
+                <a class="btn btn-dark mr-3" href="{% url 'mycourse' usr.pk %}">My Course</a>
         </div>
       </nav>
-               
+ 
+   
+ 
 {% block content %}
-  {% load static %}
-           {{usr.fname}}<br>
-           {{usr.lname}}<br>
-           {{usr.email}}<br>
-           {{usr.sex}}<br>
-              
-        {% endblock %}     
-           }
-           }
-           }
-           }
-           }
-           }
 
+
+ <div class="my-5">
+  <h2 class="display-5 mx-5">Programming language</h2>
+ <div class="owl-carousel owl-theme mt-3">
+
+  {% for p in programming %}
+  
+    <div class="item">
+
+      
+                         <div class="card mx-1">
+                          <a href="{% url 'courseview' p.pk usr.pk %}" class="btn">
+                            <span class="badge  badge-warning w-50 mt-2"
+                          style="position: absolute; z-index: 3"
+                        >BEST RATED</span>
+
+                             <img class="card-img-top h-50"    src="{{p.image.url}}" alt="" height="200px">
+                           </a>
+                             <div class="card-body px-2">
+                               <h6 class="fw-bold">{{p.name}}</h6>
+                               <p class="card-text fw-bold" style="font-size: 11px;">{{p.content}}</p>
+                               <p class="card-text"><small class="text-muted">
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star-half text-warning"></i>
+                                 4.5 (18,560)</small>
+                              
+                                 </p>
+                             </div>
+                           </div>
+    </div>
+    
+    
+    {% endfor %}
+    
+
+    
+   </div>
+</div>
+
+
+<div class="my-5">
+  <h2 class="display-5 mx-5">Web Development</h2>
+ <div class="owl-carousel owl-theme mt-3">
+
+  {% for v in web_development %}
+  
+    <div class="item">
+      
+                         <div class="card mx-1 ">
+                          <a href="{% url 'courseview' v.pk usr.pk %}" class="btn">
+                            <span class="badge  badge-warning w-50 mt-2"
+                          style="position: absolute; z-index: 3"
+                        >BEST RATED</span>
+
+                             <img class="card-img-top h-50"    src="{{v.image.url}}" alt="" height="200px">
+                           </a>
+                             <div class="card-body px-2">
+                               <h6>{{v.name}}</h6>
+                               <p class="card-text" style="font-size: 11px;">{{v.content}}</p>
+                               <p class="card-text"><small class="text-muted">
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star-half text-warning"></i>
+                                 4.5 (18,560)</small>
+                              
+                                 </p>
+                             </div>
+                           </div>
+    </div>
+   
+    
+    {% endfor %}
+    
+
+    
+   </div>
+</div>
+
+<div class="my-5">
+  <h2 class="display-5 mx-5">Data Science</h2>
+ <div class="owl-carousel owl-theme mt-3">
+
+  {% for d in data_science %}
+  
+    <div class="item">
+      
+                         <div class="card mx-1 ">
+                          <a href="{% url 'courseview' d.pk usr.pk %}" class="btn">
+                            <span class="badge  badge-warning w-50 mt-2"
+                          style="position: absolute; z-index: 3"
+                        >BEST RATED</span>
+
+                             <img class="card-img-top h-50"    src="{{d.image.url}}" alt="" height="200px">
+                           </a>
+                             <div class="card-body px-2">
+                               <h6>{{d.name}}</h6>
+                               <p class="card-text" style="font-size: 11px;">{{d.content}}</p>
+                               <p class="card-text"><small class="text-muted">
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star-half text-warning"></i>
+                                 4.5 (18,560)</small>
+                              
+                                 </p>
+                             </div>
+                           </div>
+    </div>
+   
+    
+    {% endfor %}
+    
+
+    
+   </div>
+</div>
+
+
+
+
+ <div class="my-5">
+  <h2 class="display-5 mx-5">Mobile Development</h2>
+ <div class="owl-carousel owl-theme mt-3">
+
+  {% for p in mobile_development %}
+  
+    <div class="item">
+
+      
+                         <div class="card mx-1 ">
+                          <a href="{% url 'courseview' p.pk usr.pk %}" class="btn">
+                            <span class="badge  badge-warning w-50 mt-2"
+                          style="position: absolute; z-index: 3"
+                        >BEST RATED</span>
+
+                             <img class="card-img-top h-50"    src="{{p.image.url}}" alt="" height="200px">
+                           </a>
+                             <div class="card-body px-2">
+                               <h6 class="fw-bold">{{p.name}}</h6>
+                               <p class="card-text fw-bold" style="font-size: 11px;">{{p.content}}</p>
+                               <p class="card-text"><small class="text-muted">
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star text-warning"></i>
+                                   <i class="fas fa-star-half text-warning"></i>
+                                 4.5 (18,560)</small>
+                              
+                                 </p>
+                             </div>
+                           </div>
+    </div>
+    
+    
+    {% endfor %}
+    
+
+    
+   </div>
+</div>
+
+
+  {% endblock %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
-  <script>
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    })
-  
+ <script type="text/javascript">
+  $('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:10,
+    nav:false,
+    autoplay:true,
+    autoplayTimeout:1500,
+    stagePadding:50,
+    dots:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
   </script>
   
 </body>

@@ -1,0 +1,235 @@
+{% extends 'inst_page.html' %}
+{% block content %}
+{% load static %}
+
+  
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+
+   <!-- <link rel="stylesheet" href="{% static '/css/dark_mode.css' %}">-->
+
+
+    <link rel="stylesheet" href="{% static '/css/nav_sidebar.css' %}">
+    <script src="{% static 'css/nav_sidebar.css' %}" defer=""></script>
+
+    <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+
+        
+
+  
+
+   
+
+
+    <!-- Container -->
+    <div id="container">
+
+        <div class="main" id="main">
+
+            <div class="content">
+
+                <!-- Content -->
+                <div id="content" class="colM">
+
+
+                    <div id="content-main">
+
+                        <form enctype="multipart/form-data" method="post" action="{% url 'addcourse' %}" id="courses_form" novalidate="">
+                                {% csrf_token %}
+                            <div>
+
+
+
+
+
+
+
+                                <fieldset class="module aligned ">
+
+
+
+                                    <div class="form-row field-name">
+
+
+                                        <div>
+
+
+                                            <label class="required" for="id_name">Name of course:</label>
+
+                                            <input type="text" name="name" class="vTextField" maxlength="50" required=""
+                                                id="id_name">
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row field-content">
+
+
+                                        <div>
+
+
+                                            <label class="required" for="id_content">Content:</label>
+
+                                            <textarea name="content" cols="40" rows="10" class="vLargeTextField"
+                                                maxlength="100" required="" id="id_content"></textarea>
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <div class="form-row field-image">
+
+
+                                        <div>
+
+
+                                            <label class=" required" for="id_image">Image:</label>
+
+                                            <input type="file" name="image" accept="image/*" id="id_image">
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row field-intro">
+
+
+                                        <div>
+
+
+                                            <label class ="required" for="id_intro">Intro video:</label>
+
+                                             <input type="text" name="intro" class="vTextField" maxlength="100" required=""
+                                                id="id_intro">
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row field-category">
+
+
+                                        <div>
+                                                  
+                                                  
+
+                                            <label class="required" for="id_category">Category:</label>
+
+                                            <div class="related-widget-wrapper" data-model-ref="Category">
+                                                <select name="category" required="" id="id_category">
+                                                   
+                                                    {% for cat in category  %}
+                                                      <option >{{cat}}</option>
+                                                         {% endfor %}
+                                                          <option value="" selected="">---------</option>
+                                                      </select>
+                                            
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-row field-instructor">
+
+
+                                        <div>
+
+                                            <label class="required" for="id_instructor">Instructor:</label>
+
+                                            <div class="related-widget-wrapper" data-model-ref="Instructor">
+                                                <select name="instructor" required="" id="id_instructor">
+                                                    
+                                                  
+                                                      <option value="" selected="">{{ins.fname}}</option>
+                                                      <option value="" selected="">---------</option>
+                                                       
+                                                      </select>
+                                               
+                                           
+
+                                            </div>
+
+                                          
+
+                                        </div>
+
+                                    </div>
+
+                                    
+                                   
+
+
+
+
+
+
+                                </fieldset>
+
+
+                                    <input type="submit" value="Create" name="_save">
+
+
+                                   
+
+
+                                
+
+
+
+
+
+
+
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <br class="clear">
+                </div>
+                <!-- END Content -->
+                <div id="footer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END Container -->
+
+ 
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

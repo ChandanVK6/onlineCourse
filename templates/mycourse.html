@@ -42,10 +42,10 @@
                     <i class="fas fa-list-ul"></i> Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Programming</a>
+                <a class="dropdown-item" href="#">web Development</a>
+                <a class="dropdown-item" href="#">Mobile Development</a>
+                <a class="dropdown-item" href="#"> Data Science</a>
               </div>
             </li>
 
@@ -62,7 +62,8 @@
                     </li>
 
           </ul>                
-          
+           <p style="color:#ffffff;" class ="mr-5 mt-3  ">{{usrs.fname}}&nbsp;{{usrs.lname}}</p>
+                           <a class="btn btn-dark mr-3" href="{% url 'signout' %}">LogOut</a>
         </div>
       </nav>
  
@@ -74,47 +75,36 @@
 
       {% block content %}
       {% load static %}
-       <div class="container mt-5" >
-          <h3>
-               <small class="text-muted">Top Courses in "Business"</small>
-             </h3>
-           <div class="card-deck" >
-                 {% for crs in usr %}
-                   <div class="card mx-1 shadow-sm">
-                     <a href="#">
-                      <figure class="figure">
-                     
-
-                     <img class="card-img-top h-50"    src="{{crs.image.url}}" alt="">
-                     </figure>
-                   </a>
-                     <div class="card-body px-2">
-                       <h6>{{crs.name}}</h6>
-                       <p>{{crs.content}}</p>
-                       <a href="{{crs.file}}">{{crs.file}}</a>
-                       <p class="card-text" style="font-size: 11px;">{{crs.instructor}}</p>
-                       <p class="card-text"><small class="text-muted">
-                           <i class="fas fa-star text-warning"></i>
-                              {{crs.rev_stars}}</small>
-                         </p>
-                     </div>
-                   </div>
-
-                 
-                     
-                    
-   
-                                  
-                   
-                     
-                   {% endfor %}
-                 </div>
+       {% if user %}
+       <div class="list-group">
+       {% for usr in user %}
+        
+    
       
-
-
-
-                 
+  <a href="{% url 'coursedetail' usr.courses_id.pk usrs.pk %}" class="list-group-item list-group-item-action" aria-current="true">
+   <div class="card mb-3" style="max-width: 1800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{usr.courses_id.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{usr.courses_id.name}}</h5>
+        <p class="card-text">{{usr.courses_id.content}}</p>
+        <p class="card-text"><small class="text-muted">{{usr.enroll_date}}</small></p>
       </div>
+    </div>
+  </div>
+</div>
+  </a>
+  {% endfor %}
+</div>
+       {% else %}
+        <br>
+        <br>
+        <br>
+        <h3> You have not Enrolled in any courses !!!..</h3>
+        {% endif %}
 
 
       {% endblock %}
@@ -123,7 +113,7 @@
       
 
 
-
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

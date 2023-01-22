@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_app',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
     'default': {
         'HOST':'127.0.0.1',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_db',
+        'NAME': 'cour_db',
         'PORT': 3306,
         'USER': 'root',
         'PASSWORD':'589616',

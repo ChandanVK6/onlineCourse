@@ -1,0 +1,123 @@
+{% load static %}
+{% load embed_video_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> 
+   <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}" > -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/custom-style.css' %}" > 
+  
+
+
+    
+    
+    <title>Welcome !</title>
+  </head>
+
+
+
+  <body>
+    
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mb-3" href="{% url 'index' %}">
+          <img src="{% static  '/images/data-center.png' %}" width = '50px' class ="mr-3" >
+          Freelearn
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+         aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+
+          <ul class="navbar-nav mr-auto container-fluid">
+           
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-list-ul"></i> Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Programming</a>
+                <a class="dropdown-item" href="#">web Development</a>
+                <a class="dropdown-item" href="#">Mobile Development</a>
+                <a class="dropdown-item" href="#"> Data Science</a>
+            </li>
+
+            <li class="nav-item col-8">
+                   <form class="form-inline my-2 my-lg-0 inbutton">
+                            <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
+                            style="border-radius: 5px 0px 0px 5px" 
+                            type="search" placeholder="Search for Courses" aria-label="Search">
+                             
+                            <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
+                          style="border-radius: 0px 5px 5px 0px;"
+                            type="submit"><i class="fas fa-search text-danger "></i></button>
+                        </form>
+                    </li>
+
+          </ul>
+                 <p style="color:#ffffff;" class ="mr-5 mt-3  ">{{usr.fname}}&nbsp;{{usr.lname}}</p>
+                <a class="btn btn-dark mr-3" href="{% url 'signout' %}">LogOut</a>
+                
+
+                
+
+                
+          
+        </div>
+      </nav>
+ 
+   
+ 
+{% block content %}
+
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   {% video courses.intro_Video 'small' %}
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{courses.name}}</h2>
+   <hr>
+   <p>Course Description: {{courses.content}}</p> <br>
+   <h4></h4> <br>
+   <a href="{% url 'main-view' courses.pk usr.pk %}" class="btn btn-primary shadow px-5 py-2">Enroll</a>
+   <h3 class="mt-5">What you'll learn</h3>
+   <ul>
+    <li>Extensive, informative and interesting video lecture</li>
+    <li>Complete Code demonstrated in lecture</li>
+    <li>Instructor contact Email for questions and clarifications</li>
+    <li>Coverage of all important primary Javascript concepts</li>
+    <li>All Powerpoint Demonstrations Used in Course</li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+{% endblock %}
+
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    
+  
+</body>
+
+
+
+</html>

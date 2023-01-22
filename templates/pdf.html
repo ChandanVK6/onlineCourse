@@ -1,0 +1,182 @@
+{% extends 'inst_page.html' %}
+{% block content %}
+{% load static %}
+
+  
+    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+
+   <!-- <link rel="stylesheet" href="{% static '/css/dark_mode.css' %}">-->
+
+
+    <link rel="stylesheet" href="{% static '/css/nav_sidebar.css' %}">
+    <script src="{% static 'css/nav_sidebar.css' %}" defer=""></script>
+
+    <link rel="stylesheet" href="{% static '/css/forms.css' %}">
+
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+
+        
+
+  
+
+   
+
+
+    <!-- Container -->
+    <div id="container">
+
+        <div class="main" id="main">
+
+            <div class="content">
+
+                <!-- Content -->
+                <div id="content" class="colM">
+
+
+                    <div id="content-main">
+
+                        <form enctype="multipart/form-data"  action="{% url 'pdfs' %}" method="post"  novalidate="">
+                                {% csrf_token %}
+                            <div>
+
+
+
+
+
+
+
+                                <fieldset class="module aligned ">
+
+
+
+                                    <div class="form-row field-name">
+
+
+                                        <div>
+
+
+                                            <label class="required" for="id_name">Name of pdf:</label>
+
+                                            <input type="text" name="name" class="vTextField" maxlength="50" required=""
+                                                id="id_name">
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="form-row field-pdf">
+
+
+                                        <div>
+
+
+                                            <label class ="required" for="id_pdf">pdfs:</label>
+
+                                            <input type="file" name="pdf" accept=" .pdf"required id="id_pdfs">
+
+
+
+                                        </div>
+
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                   
+
+                                    <div class="form-row field-category">
+
+
+                                        <div>
+                                                  
+                                                  
+
+                                            <label class="required" for="id_category">Course:</label>
+
+                                            <div class="related-widget-wrapper" data-model-ref="Courses">
+                                                <select name="courses" required="" id="id_courses">
+                                                   
+                                                    {% for cat in Courses  %}
+                                                      <option >{{cat}}</option>
+                                                         {% endfor %}
+                                                          <option value="" selected="">---------</option>
+                                                      </select>
+                                            
+
+                                            </div>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                  
+
+
+
+                                </fieldset>
+
+
+                                    <input type="submit" value="Add" name="_save">
+
+
+                                   
+
+
+                                
+
+
+
+
+
+
+
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <br class="clear">
+                </div>
+                <!-- END Content -->
+                <div id="footer"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END Container -->
+
+ 
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

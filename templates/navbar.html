@@ -1,0 +1,57 @@
+
+
+{% load static %}
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand mb-3" href="{% url 'index' %}">
+          <img src="{% static  '/images/data-center.png' %}" width = '50px' class ="mr-3" >
+          Freelearn
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+         aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+
+          <ul class="navbar-nav mr-auto container-fluid">
+           
+            <li class="nav-item dropdown">
+
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-list-ul"></i> Categories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Programming</a>
+                <a class="dropdown-item" href="#">web Development</a>
+                <a class="dropdown-item" href="#">Mobile Development</a>
+                <a class="dropdown-item" href="#"> Data Science</a>
+            </li>
+
+            <li class="nav-item col-8">
+                   <form class="form-inline my-2 my-lg-0 inbutton">
+                            <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
+                            style="border-radius: 5px 0px 0px 5px" 
+                            type="search" placeholder="Search for Courses" aria-label="Search">
+                             
+                            <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
+                          style="border-radius: 0px 5px 5px 0px;"
+                            type="submit"><i class="fas fa-search text-danger "></i></button>
+                        </form>
+                    </li>
+
+          </ul>
+                
+               <p style="color:#ffffff;" class ="mr-5 mt-3  ">Hi, {{ins.fname}}&nbsp;{{ins.lname}}</p>
+
+
+                <a class="btn btn-dark mr-3" href="{% url 'signout' %}">LogOut</a>
+      
+          
+        </div>
+      </nav>
+
+ 
+              
