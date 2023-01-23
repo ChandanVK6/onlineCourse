@@ -143,7 +143,7 @@ section {
 .remeber {
     position: relative;
     display: inline-block;
-    color: white;
+    color: black;
     font-weight: 300;
     margin-bottom: 10px;
     cursor: pointer;
@@ -157,7 +157,7 @@ section {
 }
 
 .box .form a {
-    color: white;
+    color: black;
 }
 
 .box .form a:hover {
