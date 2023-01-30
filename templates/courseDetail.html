@@ -59,12 +59,12 @@
                 <a class="dropdown-item" href="#">Mobile Development</a>
                 <a class="dropdown-item" href="#"> Data Science</a>
             </li>
-
-            <li class="nav-item col-8">
-                   <form class="form-inline my-2 my-lg-0 inbutton">
+<li class="nav-item col-8">
+                   <form class="form-inline my-2 my-lg-0 inbutton" action="{% url 'search' %}" method="post">
+                        {% csrf_token %}
                             <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
                             style="border-radius: 5px 0px 0px 5px" 
-                            type="search" placeholder="Search for Courses" aria-label="Search">
+                            type="search" placeholder="Search for Courses" aria-label="Search" name="query" >
                              
                             <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
                           style="border-radius: 0px 5px 5px 0px;"
@@ -149,7 +149,7 @@
  </div>
 </div>
 </div>
-   <div class="mt-4 text-center align-self-center">
+   <div class="mt-4 text-center align-self-center ">
    <h3 >What you'll learn</h3>
    <ul>
     <li><span>&#10003;</span> Extensive, informative and interesting video lecture</li>

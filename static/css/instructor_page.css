@@ -1,0 +1,342 @@
+.instructor-responsive-container {
+    max-width: 153.6rem;
+    min-height: 72rem;
+    padding: 0 4.8rem;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+  
+}
+
+div {
+    display: block;
+}
+.courses--courses-list--1lGPH {
+    margin: 2.4rem 0 6.4rem;
+}
+.instructor-dashboard--create-cta-panel--229he {
+    align-items: center;
+    gap: 2.4rem;
+    margin: 4.8rem 2rem 2.4rem 2rem;
+    padding: 3.3rem;
+}
+
+.instructor-dashboard--panel--2zFG7 {
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    display: flex;
+    justify-content: space-between;
+}
+ h1 {
+    font-size: inherit;
+    font-weight: 400;
+    max-width: 60rem;
+}
+
+
+h1 {
+    display: block;
+    
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
+
+}
+
+.instructor-dashboard--create-cta-button--28gi7 {
+    min-width: 20rem;
+}
+
+.ud-btn-brand {
+    background-color: #a435f0;
+}
+ .ud-btn-brand {
+    color: #fff;
+}
+.ud-btn-large {
+    height: 3.3rem;
+}
+.ud-btn {
+    position: relative;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+   
+    padding: 0 1.2rem;
+    justify-content: center;
+    
+    -webkit-user-select: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+.ud-heading-md {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.6rem;
+}
+a {
+ 
+    text-decoration: none;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+
+.instructor-dashboard--resources-title--36ttL {
+    text-align: center;
+    margin: 6.4rem auto;
+}
+
+ h2 {
+    font-size: inherit;
+    font-weight: 400;
+    max-width: 60rem;
+}
+* {
+    box-sizing: border-box;
+  
+    padding: 0;
+}
+user agent stylesheet
+h2 {
+    display: block;
+   
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+
+.instructor-dashboard--new-instructor-resources--13KnT {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.4rem;
+}
+
+
+
+
+body {
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.2rem;
+    color: #1c1d1f;
+    margin: 0;
+}
+
+.instructor-dashboard--resource-panel-primary--2Zcjn {
+    flex-basis: 100%;
+    padding: 1.6rem 2.8rem;
+}
+
+.instructor-dashboard--panel--2zFG7 {
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.instructor-dashboard--resource-image-col--2ZkJ2 {
+    text-align: center;
+
+}
+
+.instructor-dashboard--resource-panel-primary--2Zcjn .instructor-dashboard--resource-image--2vPP8 {
+    width: 21rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+img[Attributes Style] {
+   
+    aspect-ratio: auto 300 / 300;
+ 
+}
+.instructor-dashboard--resource-description-col--2wfGo {
+    flex: 1;
+}
+
+.ud-text-xl {
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 2.4rem;
+}
+
+ h3 {
+    
+    max-width: 60rem;
+}
+
+
+h3 {
+    display: block;
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+ 
+}
+.instructor-dashboard--resource-title--16nub {
+    margin: 0 0 3.2rem;
+}
+.instructor-dashboard--resource-text--3objL {
+    margin: 0 0 3.2rem;
+}
+p {
+   
+    font-weight: 400;
+    max-width: 60rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+a {
+    color: #5624d0;
+    text-decoration: none;
+    
+}
+
+a:-webkit-any-link {
+ 
+    cursor: pointer;
+    text-decoration: none;
+  
+}
+.ud-sr-only {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+}
+.instructor-dashboard--resource-panel--26dyy {
+    flex: 1;
+    gap: 1.6rem;
+    padding: 3.2rem 4.8rem 1.6rem;
+}
+
+.instructor-dashboard--panel--2zFG7 {
+    border: 1px solid #d1d7dc;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+    display: flex;
+    justify-content: space-between;
+}
+.instructor-dashboard--resource-image-col--2ZkJ2 {
+    text-align: center;
+    width: 36%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.instructor-dashboard--resource-description-col--2wfGo {
+    flex: 1;
+}
+
+.instructor-dashboard--resource-title--16nub {
+    margin: 0 0 3.2rem;
+}
+
+.ud-text-lg {
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1.9rem;
+}
+
+.instructor-dashboard--resources-title--36ttL {
+    text-align: center;
+    margin: 6.4rem auto;
+}
+
+.instructor-dashboard--resource-units--1QuAX {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-bottom: 9.6rem;
+    text-align: center;
+}
+
+.instructor-dashboard--resource-units--1QuAX .instructor-dashboard--resource-unit--2TqA1 {
+    color: #1c1d1f;
+    width: 20rem;
+}
+a {
+    
+    text-decoration: underline;
+}
+
+.ud-icon-color-neutral {
+    color: #1c1d1f;
+}
+
+.ud-icon-xlarge {
+    width: 4.8rem;
+    height: 4.8rem;
+}
+.ud-icon {
+    fill: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.instructor-dashboard--resource-unit-title--1bw7g {
+    color: #5624d0;
+    margin: 0.8rem 0 2.4rem;
+}
+.ud-link-underline {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+}
+
+.ud-text-bold {
+    font-weight: 700;
+}
+.ud-text-sm {
+    font-family: udemy sans,sf pro text,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 1rem;
+}
+
+.instructor-main-container {
+    flex: 1;
+    min-width: 1px;
+    padding-top: 7.2rem;
+    margin-bottom: 6.4rem;
+}

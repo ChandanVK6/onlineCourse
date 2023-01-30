@@ -1,5 +1,4 @@
 {% load static %}
-{% load embed_video_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,15 +11,6 @@
    <!-- <link rel="stylesheet" href="{% static 'css/custom.css' %}" > -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/custom-style.css' %}" > 
-  
-
-
-    
-    
-    <title>Welcome !</title>
-  </head>
-
-
 
   <body>
     
@@ -52,12 +42,14 @@
                 <a class="dropdown-item" href="#">Mobile Development</a>
                 <a class="dropdown-item" href="#"> Data Science</a>
             </li>
-<li class="nav-item col-8">
+
+            <li class="nav-item col-8">
                    <form class="form-inline my-2 my-lg-0 inbutton" action="{% url 'search' %}" method="post">
-                        {% csrf_token %}
+                     {% csrf_token %}
+                   
                             <input class="form-control form-control-lg mr-sm-0 col-8 bg-light border-0 "
                             style="border-radius: 5px 0px 0px 5px" 
-                            type="search" placeholder="Search for Courses" aria-label="Search" name="query" >
+                            type="search" placeholder="Search for Courses" aria-label="Search" name="query">
                              
                             <button class="btn btn-light btn-lg  my-2 my-sm-0 ml-0 col-2" 
                           style="border-radius: 0px 5px 5px 0px;"
@@ -66,56 +58,66 @@
                     </li>
 
           </ul>
-                 <p style="color:#ffffff;" class ="mr-5 mt-3  ">{{usr.fname}}&nbsp;{{usr.lname}}</p>
-                <a class="btn btn-dark mr-3" href="{% url 'signout' %}">LogOut</a>
-                
 
-                
+           
+                <a class="btn btn-dark mr-3" href="{% url 'instructor' %}">Teach as Instructor</a>
+                <a class="nav-link btn btn-outline-light" href="{% url 'login' %}">Login</a>
+                <a class="nav-link btn btn-danger mx-2" href="{% url 'signup' %}">Signup</a>
+            
 
-                
           
         </div>
       </nav>
- 
-   
- 
-{% block content %}
 
-<div class="container my-5">
- <div class="row">
-  <div class="col-sm-6 text-center align-self-center">
-   {% video courses.intro_Video 'small' %}
+    <h1 class="ud-heading-xl search--header-title--Et0Ha mt-5 ml-5 ">{{cnt}} results for “{{crs}}”</h1><br>
+{% if res %}
+
+    <span class="query-switcher--container--1h-BA mt-5 ml-5">Showing results for <a href="#"><i><b>{{crs}}</b></i></a></span>
+ 
+     <hr>
+      <div class="list-group">
+{% for p in res %}
+      
+  <a href="{% url 'login' %}" class="list-group-item list-group-item-action" aria-current="true">
+   <div class="card mb-3 ml-5" style="max-width: 1400px;">
+  <div class="row g-0">
+    <div class="col-md-3">
+      <img src="{{p.image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{p.name}}</h5>
+        <p class="card-text">{{p.content}}</p>
+        <p class="card-text"><small class="text-muted">{{p.instructor.fname}}&nbsp;{{p.instructor.lname}}</small></p>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-5 offset-sm-1">
-   <h2>{{courses.name}}</h2>
-   <hr>
-   <p>Course Description: {{courses.content}}</p> <br>
-   <h4></h4> <br>
-   <a href="{% url 'main-view' courses.pk usr.pk %}" class="btn btn-primary shadow px-5 py-2">Get For Free</a>
-   <h3 class="mt-5">What you'll learn</h3>
-   <ul>
-    <li>Extensive, informative and interesting video lecture</li>
-    <li>Complete Code demonstrated in lecture</li>
-    <li>Instructor contact Email for questions and clarifications</li>
-    <li>Coverage of all important primary Javascript concepts</li>
-    <li>All Powerpoint Demonstrations Used in Course</li>
-   </ul>
-  </div>
- </div>
+</div>
+  </a>
+<hr>
+{% endfor %}
 </div>
 
-{% endblock %}
-
-
+{% else %}
   
+    <span class="query-switcher--container--1h-BA mt-5 ml-5">no results for <a href="#"><i><b>{{crs}}</b></i></a></span>
+ 
+     <hr>
+ <p class="container">No Courses available </p>
+ {% endif %}
+
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-    
-  
+
 </body>
 
 

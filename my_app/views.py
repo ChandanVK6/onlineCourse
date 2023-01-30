@@ -6,6 +6,8 @@ from django.http import HttpResponse ,HttpRequest
 from django.contrib import messages
 from django.views import View
 from .models import (Instructor,Category,Pdfs,Videos,Quiz,Rating,Courses,Courses_User)
+from django.db.models import Count
+
 
 usr_sign_fname =''
 usr_sign_lname=''
@@ -25,7 +27,9 @@ ins_login_passw=''
 ins_login_email=''
 
 def base(request):
-    return render(request,'base.html')
+    crs = Courses.objects.all()
+    data = Courses.objects.filter(category_id='1')
+    return render(request,'base.html',{'courses':crs,'data':data})
 
 def login(request):
     global usr_login_email,usr_login_passw
@@ -81,16 +85,16 @@ def instsignup(request):
         ins_sign_email = request.POST['Email']
         ins_sign_passw = request.POST['password']
         ins_sign_sex = request.POST['sex']
-
-        u = Instructor(fname=ins_sign_fname,lname=ins_sign_lname,email=ins_sign_email,passwd=ins_sign_passw,sex=ins_sign_sex)
         for ins in Instructor.objects.all():
-            if ins_sign_fname == ins.fname and ins_sign_lname == ins.lname:
-                return render(request,'inst_signup.html')
-        u.save()
-        
-        for ins in Instructor.objects.all():
-            if ins_sign_fname == ins.fname and ins_sign_lname == ins.lname:
-                return render(request,'instlogin.html')
+            if ins_sign_fname == ins.fname and ins_sign_lname == ins.lname :   
+                return redirect('inst_signup')
+            elif ins_login_passw==ins.passwd and ins_sign_email==ins.email:
+                return redirect('inst_signup')
+            else:
+                u = Instructor(fname=ins_sign_fname,lname=ins_sign_lname,email=ins_sign_email,passwd=ins_sign_passw,sex=ins_sign_sex)
+       
+                u.save()
+                return redirect('inst_login')
     return render(request,'inst_signup.html')
 
 
@@ -102,7 +106,7 @@ def instlogin(request):
         ins_login_passw = request.POST['password']
         for inst in Instructor.objects.all():
             if ins_login_email ==inst.email and ins_login_passw ==inst.passwd:
-                return render(request,'inst_page.html',{'ins':inst})
+                return render(request,'instructor2.html',{'ins':inst})
     return render(request ,'inst_login.html')
      
 
@@ -298,3 +302,25 @@ def coursedetail(request,pk,user):
         return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'four':average,'usr':user})
     elif average == 5:
         return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'five':average,'usr':user})
+
+
+
+def search(request):
+    if request.method=="POST":
+        crs = request.POST['query']
+        print(crs)
+        if crs:
+            res = Courses.objects.filter(name__icontains=crs)
+            cnt = res.count()
+            return render(request,'search.html',{'res':res,'cnt':cnt,'crs':crs})
+        else:
+            print('No information to show')
+            return render(request,'search.html',{})
+
+
+
+def instructorpage(request):
+    return render(request,'instructor_page.html')
+
+def instructor2(request):
+    return render(request,'instructor2.html')

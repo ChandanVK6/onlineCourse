@@ -245,3 +245,47 @@ img {
     margin-left: 160px;
     padding: 0px 10px;
 }
+
+
+.header--header--1SLKV .ud-search-form-autocomplete {
+    max-width: none;
+}
+.header--search-bar--1g81R {
+    flex-grow: 1;
+    height: 4.8rem;
+    border: 1px solid #1c1d1f;
+    border-radius: 9999px;
+    background-color: #f7f9fa;
+    margin: 0 1.2rem;
+}
+.ud-search-form-autocomplete {
+    position: relative;
+}
+.ud-form-group {
+    min-width: 18rem;
+    max-width: 60rem;
+}
+
+.ud-form-label {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 0.8rem;
+    min-height: 2.8rem;
+}
+
+.ud-sr-only {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+}
+.ud-heading-sm {
+    font-family: udemy sans,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.4rem;
+}
+

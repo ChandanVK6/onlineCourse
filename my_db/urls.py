@@ -42,6 +42,10 @@ urlpatterns = [
     path('rate/', views.rate_image, name='rate-view'),
     path('coursedetail/<int:pk>/<int:user>/',views.coursedetail,name='coursedetail'),
     path('courseview/<int:pk>/<int:user>/', views.courseview, name='courseview'),
+    path('search/',views.search,name='search'),
+    path('instructor_page/',views.instructorpage,name='instructorpage'),
+    path('instructor2/',views.instructor2,name='instructor2'),
+   
 ]+ static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
