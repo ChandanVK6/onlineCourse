@@ -126,6 +126,23 @@ def mycourse(request,pk):
     return render(request,'mycourse.html',{'user':users,'usrs':usrs})
     
 
+def delete(request,pk,id):
+    global usr_login_email,usr_login_passw
+    crs = Courses_User.objects.filter(courses_id=pk)
+    for cr in crs:
+        if cr.user_id.pk == id:
+            get = Courses_User.objects.get(pk=cr.pk)
+            get.delete()
+    usr = User.objects.get(pk =id)        
+    courses = Courses.objects.all()
+    programming = Courses.objects.filter(category_id = '2')
+    web_development = Courses.objects.filter(category_id ='3')
+    mobile_development = Courses.objects.filter(category_id ='4')
+    data_science = Courses.objects.filter(category_id = '1')
+    return render(request,'user_page.html',{'usr':usr,'courses':courses,'programming': programming ,'web_development': web_development, 'mobile_development': mobile_development,'data_science':data_science})
+    
+    
+
 def instpage(request):
     return render(request,'inst_page.html')
 
