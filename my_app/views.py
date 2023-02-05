@@ -92,7 +92,6 @@ def instsignup(request):
                 return redirect('inst_signup')
             else:
                 u = Instructor(fname=ins_sign_fname,lname=ins_sign_lname,email=ins_sign_email,passwd=ins_sign_passw,sex=ins_sign_sex)
-       
                 u.save()
                 return redirect('inst_login')
     return render(request,'inst_signup.html')
@@ -309,6 +308,7 @@ def coursedetail(request,pk,user):
         score.append(no.score)
     avr = sum(score)/len(score)
     average = round(avr,3)
+    none=0
     if average == 1:
         return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'one':average,'usr':user})
     elif average == 2:
@@ -319,7 +319,8 @@ def coursedetail(request,pk,user):
         return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'four':average,'usr':user})
     elif average == 5:
         return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'five':average,'usr':user})
-
+    else:
+        return render(request,'courseDetail.html',{'courses':courses,'videos':videos,'pdf':pdf,'quiz':quiz,'none':none,'usr':user})
 
 
 def search(request):
